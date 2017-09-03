@@ -42,24 +42,8 @@ function Services() {
   this.field = new Field(this)
 }
 
-Services.prototype.getFieldSize = function() {
-  throw "TODO"
-}
-
-Services.prototype.getPaddles = function() {
-  throw "TODO"
-}
-
-Services.prototype.getPaddleControllers = function() {
-  throw "TODO"
-}
-
 Services.prototype.getKeyboard = function() {
   return this.keyboard.get()
-}
-
-Services.prototype.getTimer = function() {
-  throw "TODO"
 }
 
 Services.prototype.getGameLoop = function() {
