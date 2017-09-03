@@ -10,17 +10,17 @@ function Services() {
   const paddleSize = new Vector(10.0, 100.0)
   const screenCenterY = (this.getScreen().getSize().y / 2.0) - (paddleSize.y / 2.0)
 
-  const p1Paddle = this.getFactory().createPaddle(
+  this.p1Paddle = this.getFactory().createPaddle(
       Rectangle.zero()
         .setPosition(new Vector(0.0, screenCenterY))
         .setSize(paddleSize))
   this.getFactory().createPaddleController(
-      p1Paddle, 
+      this.p1Paddle, 
       KEYBOARD_KEY_W, 
       KEYBOARD_KEY_S, 
       100 /*Speed in pixels per second*/)
 
-  const p2Paddle = this.getFactory().createPaddle(
+  this.p2Paddle = this.getFactory().createPaddle(
       Rectangle.zero()
         .setPosition(
             this.getScreen()
@@ -29,7 +29,7 @@ function Services() {
                 .substract(new Vector(0.0, screenCenterY)))
         .setSize(paddleSize))
   this.getFactory().createPaddleController(
-      p2Paddle, 
+      this.p2Paddle, 
       KEYBOARD_KEY_UP, 
       KEYBOARD_KEY_DOWN, 
       100 /*Speed in pixels per second*/)
@@ -81,4 +81,12 @@ Services.prototype.getField = function() {
 
 Services.prototype.getCollision = function() {
   return this.collision.get()
+}
+
+Services.prototype.getP1Paddle = function() {
+  return this.p1Paddle
+}
+
+Services.prototype.getP2Paddle = function() {
+  return this.p2Paddle
 }

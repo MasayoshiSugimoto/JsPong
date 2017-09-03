@@ -5,7 +5,6 @@ function Paddle(rectangle) {
 }
 
 Paddle.prototype.update = function() {
-  
 }
 
 Paddle.prototype.move = function(yDelta) {
@@ -16,6 +15,18 @@ Paddle.prototype.move = function(yDelta) {
 
 Paddle.prototype.getRectangle = function() {
   return this.rectangle
+}
+
+Paddle.prototype.getPosition = function() {
+  return this.rectangle.getPosition()
+}
+
+Paddle.prototype.setPosition = function(position) {
+  this.rectangle.setPosition(position) 
+}
+
+Paddle.prototype.getSize = function() {
+  return this.rectangle.getSize()
 }
 
 Paddle.prototype.collideX = function() {
