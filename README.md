@@ -24,3 +24,13 @@ File Description
 - Vector.js: Simple and limited implementation of 2D vectors. Can add, substract and scale.
 - index.html: Html page to launch the game.
 
+Flow
+====
+
+First, JsPong starts the game by creating the services and setting the _onload_ function. The _PongLoop_ function will then be called 60 times per seconds. The _PongLoop_ call the _GameLoop.update_ function. The following actions are executed in sequence:
+
+# Update the paddle position based on keyboard inputs
+# Update the game objects (paddle/ball) based on time. The ball will move in the direction of the velocity
+# Detect collision, reverse the velocity of the ball if needed
+# Make sure that the game objects are contained in the field and do not go out
+# Draw the screen
